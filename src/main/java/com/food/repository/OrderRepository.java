@@ -14,8 +14,11 @@ public interface OrderRepository extends CrudRepository<Book, String> {
     @Query("SELECT o FROM Book o WHERE o.status = true")
     public Iterable<Book> findAllStatus();
 
-
     @Query("SELECT o FROM Book o WHERE o.status = false")
     public Iterable<Book> findAllNoStatus();
+
+
+
+
 
 }

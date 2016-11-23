@@ -4,7 +4,7 @@ import com.food.exception.ExceptionForm;
 import com.food.model.Store;
 import com.food.model.User;
 import com.food.repository.StoreReponsitory;
-import com.food.repository.UserReponsitory;
+import com.food.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ public class StoreService {
     private StoreReponsitory storeReponsitory;
 
     @Autowired
-    private UserReponsitory userReponsitory;
+    private UserRepository userRepository;
 
     public Store save(String name, String noStreet, String district) {
         if (storeReponsitory.getByAddress(noStreet, district) != null) {

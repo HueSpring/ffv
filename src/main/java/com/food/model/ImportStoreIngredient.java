@@ -21,15 +21,18 @@ public class ImportStoreIngredient {
     private int quantity;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "user_id")
     private User user1;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "user_store_id")
     private User user2;
 
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "store_ingredient_id")
     private StoreIngredient storeIngredient;
 

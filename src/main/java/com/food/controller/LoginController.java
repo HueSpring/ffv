@@ -3,9 +3,8 @@ package com.food.controller;
 import com.food.exception.ExceptionForm;
 import com.food.form.LoginForm;
 import com.food.model.User;
-import com.food.repository.UserReponsitory;
+import com.food.repository.UserRepository;
 import com.food.service.UserService;
-import org.aspectj.lang.annotation.Around;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,7 +24,7 @@ public class LoginController {
     private UserService userService;
 
     @Autowired
-    private UserReponsitory userReponsitory;
+    private UserRepository userRepository;
 
     public LoginController() {
     }

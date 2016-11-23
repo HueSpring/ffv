@@ -4,11 +4,8 @@ import com.food.exception.ExceptionForm;
 import com.food.model.Permission;
 import com.food.model.User;
 import com.food.repository.PermissionRepository;
-import com.food.repository.UserReponsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.servlet.http.HttpSession;
 
 /**
  * Created by Hue on 11/10/2016.

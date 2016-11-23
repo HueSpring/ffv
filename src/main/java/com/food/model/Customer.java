@@ -18,7 +18,7 @@ public class Customer {
     @Id
     private String id;
     @JsonIgnore
-    private String password;
+    private String pwd;
     private String firstName;
     private String lastName;
     private String address;
@@ -32,7 +32,7 @@ public class Customer {
 
     public Customer(String id, String password, String firstName, String lastName, String address, String phone, String email, String dateCreated) {
         this.id = id;
-        this.password = password;
+        this.pwd = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -43,7 +43,7 @@ public class Customer {
 
     public Customer(String id, String password, String firstName, String lastName, String address, String phone, String email, String dateCreated, Set<Book> books) {
         this.id = id;
-        this.password = password;
+        this.pwd = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -61,12 +61,12 @@ public class Customer {
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPwd(String password) {
+        this.pwd = password;
     }
 
     public String getFirstName() {

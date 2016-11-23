@@ -75,7 +75,7 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             throw new ExceptionForm(bindingResult);
         }
-        return userService.updateOwner(key, form.getFirstName(), form.getLastName(), form.getDob(), form.getAddress(),
+        return userService.updateOwner(key, form.getId(), form.getFirstName(), form.getLastName(), form.getDob(), form.getAddress(),
                 form.getPhone(), form.getEmail());
     }
 
@@ -89,16 +89,17 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<String> delete(@PathVariable(value = "key") String key, @PathVariable(value = "id") String id, BindingResult bindingResult) {
+    public ResponseEntity<String> delete(@PathVariable(value = "key") String key, @PathVariable(value = "id") String id) {
         permissionService.permission(PermissionService.USER_DELETE, key);
         return userService.delete(id);
     }
 
     @RequestMapping(value = "/de/{id}", method = RequestMethod.DELETE)
-    public User deactive(@PathVariable(value = "key") String key, @PathVariable(value = "id") String id, BindingResult bindingResult) {
+    public User de(@PathVariable(value = "key") String key, @PathVariable(value = "id") String id) {
         permissionService.permission(PermissionService.USER_DELETE, key);
-        return userService.updateDeactive(id);
+        return userService.updateDe(id);
     }
+
 
     @RequestMapping(value = "/{id}/{storeId}", method = RequestMethod.GET)
     public User addStore(@PathVariable(value = "key") String key, @PathVariable(value = "id") String id, @PathVariable(value = "storeId") int storeId) {

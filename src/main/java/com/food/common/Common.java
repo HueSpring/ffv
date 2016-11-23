@@ -6,6 +6,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
 
@@ -27,6 +28,13 @@ public class Common {
     public static String dateTimeToString(Date date) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(stringDateTime);
         return simpleDateFormat.format(date);
+    }
+
+    public static String parseArrayInt(Date date, Long day){
+        String dat = Common.dateToString(date);
+        String[] s = dat.split("-");
+        LocalDate d = LocalDate.of(Integer.parseInt(s[0]), Integer.parseInt(s[1]), Integer.parseInt(s[2]));
+        return d.plusDays(day).toString();
     }
 
     public static String encryptMD5(String string) {

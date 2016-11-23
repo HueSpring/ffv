@@ -24,7 +24,6 @@ public class Ingredient {
     @JsonIgnore
     private Set<FoodIngredient> foodIngredients;
 
-
     @OneToMany(mappedBy = "ingredient")
     @JsonIgnore
     private Set<ImportIngredient> importIngredients;
@@ -46,7 +45,6 @@ public class Ingredient {
         this.price = price;
         this.foodIngredients = foodIngredients;
     }
-
 
     public String getId() {
         return id;
@@ -94,5 +92,13 @@ public class Ingredient {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public Set<ImportIngredient> getImportIngredients() {
+        return importIngredients;
+    }
+
+    public void setImportIngredients(Set<ImportIngredient> importIngredients) {
+        this.importIngredients = importIngredients;
     }
 }

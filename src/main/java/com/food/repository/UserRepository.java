@@ -12,15 +12,15 @@ import java.util.Date;
  * Created by Hue on 10/31/2016.
  */
 @Transactional
-public interface UserReponsitory extends CrudRepository<User, String>{
+public interface UserRepository extends CrudRepository<User, String>{
 
     @Query("SELECT u.email FROM User u WHERE u.email = ?1")
     public String getEmail(String email);
 
-    @Query("SELECT u FROM User u WHERE u.active = false")
+    @Query("SELECT u FROM User u WHERE u.active = 0")
     public Iterable<User> findDeactive();
 
-    @Query("SELECT u FROM User u WHERE u.active = true")
+    @Query("SELECT u FROM User u WHERE u.active = 1")
     public Iterable<User> findActive();
 
     @Query("SELECT u FROM User u JOIN u.store s WHERE s.id = ?1")

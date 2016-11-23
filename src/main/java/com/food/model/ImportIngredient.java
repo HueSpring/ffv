@@ -24,6 +24,7 @@ public class ImportIngredient {
     private Import anImport;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -32,9 +33,12 @@ public class ImportIngredient {
     private Ingredient ingredient;
 
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "importIngredient")
+    @JsonIgnore
     private Set<StoreIngredient> storeIngredients;
 
+    public ImportIngredient() {
+    }
 
     public ImportIngredient(int quantity, String dateEnd, String unit) {
         this.quantity = quantity;

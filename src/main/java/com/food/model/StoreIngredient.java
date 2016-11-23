@@ -19,11 +19,11 @@ public class StoreIngredient {
     private String unit;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "store_id")
     private Store store;
 
     @OneToMany(mappedBy = "storeIngredient")
-    @JsonIgnore
     private Set<ImportStoreIngredient> importStoreIngredients;
 
     @ManyToOne
